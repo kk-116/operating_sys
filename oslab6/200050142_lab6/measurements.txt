@@ -1,0 +1,110 @@
+##################################
+Without get-even Policy:
+
+--> test2 4:
+
+$ test2 4
+*Case1: Parent has no children*
+wait2 status: -1
+*Case2: Parent has children*
+Child 4 created
+Child 4 finished
+Child 5 created
+Child 6 created
+Child 7 created
+Child no. 0, Child pid: 4 exited with Status: 4, Waiting Time: 1, Run Time: 0
+Child 5 finished
+Child no. 1, Child pid: 5 exited with Status: 5, Waiting Time: 69, Run Time: 34
+Child 6 finished
+Child no. 2, Child pid: 6 exited with Status: 6, Waiting Time: 135, Run Time: 10
+Child 7 finished
+Child no. 3, Child pid: 7 exited with Status: 7, Waiting Time: 136, Run Time: 16
+
+--> test2 9:
+
+$ test2 9
+*Case1: Parent has no children*
+wait2 status: -1
+*Case2: Parent has children*
+Child 4 created
+Child 4 finished
+Child 5 created
+Child 6 created
+Child 7 created
+Child 8 created
+Child 9 created
+Child 10 created
+Child 11 created
+Child 12 created
+Child no. 0, Child pid: 4 exited with Status: 4, Waiting Time: 1, Run Time: 0
+Child 5 finished
+Child no. 1, Child pid: 5 exited with Status: 5, Waiting Time: 232, Run Time: 33
+Child 6 finished
+Child no. 2, Child pid: 6 exited with Status: 6, Waiting Time: 413, Run Time: 63
+Child 7 finished
+Child no. 3, Child pid: 7 exited with Status: 7, Waiting Time: 574, Run Time: 95
+Child 8 finished
+Child no. 4, Child pid: 8 exited with Status: 8, Waiting Time: 715, Run Time: 130
+Child 9 finished
+Child no. 5, Child pid: 9 exited with Status: 9, Waiting Time: 818, Run Time: 164
+Child 10 finished
+Child no. 6, Child pid: 10 exited with Status: 10, Waiting Time: 881, Run Time: 195
+Child 11 finished
+Child no. 7, Child pid: 11 exited with Status: 11, Waiting Time: 916, Run Time: 230
+Child 12 finished
+Child no. 8, Child pid: 12 exited with Status: 12, Waiting Time: 917, Run Time: 262
+
+With get-even policy:
+
+--> test2 4:
+
+$ test2 4
+*Case1: Parent has no children*
+wait2 status: -1
+*Case2: Parent has children*
+Child 4 created
+Child 4 finished
+Child no. 0, Child pid: 4 exited with Status: 4, Waiting Time: 1,Child 5 created
+Child 6 created
+Child 7 created
+ Run Time: 0
+ChiChild 6 finished
+Child no. 1, Child pid: 6 exited with Status: 6, Waiting Time: 63, Run Time: 62
+ld 5 finished
+Child no. 2, Child pid: 5 exited with Status: 5, Waiting Time: 95, Run Time: 31
+Child 7 finished
+Child no. 3, Child pid: 7 exited with Status: 7, Waiting Time: 93, Run Time: 95
+
+--> test2 9:
+
+$ test2 9
+*Case1: Parent has no children*
+wait2 status: -1
+*Case2: Parent has children*
+Child 4 created
+Child 4 finished
+Child 5 created
+Child 6 created
+Child 7 created
+Child 8 created
+Child 9 created
+Child 10 created
+Child 11 created
+Child 12 created
+Child no. 0, Child pid: 4 exited with Status: 4, Waiting Time: 1, Run Time: 0
+Child 6 finished
+Child no. 1, Child pid: 6 exited with Status: 6, Waiting Time: 383, Run Time: 77
+Child 5 finished
+Child no. 2, Child pid: 5 exited with Status: 5, Waiting Time: 439, Run Time: 40
+Child 8 finished
+Child no. 3, Child pid: 8 exited with Status: 8, Waiting Time: 617, Run Time: 142
+Child 10 finished
+Child no. 4, Child pid: 10 exited with Status: 10, Waiting Time: 788, Run Time: 211
+Child 7 finished
+Child no. 5, Child pid: 7 exited with Status: 7, Waiting Time: 908, Run Time: 109
+Child 12 finished
+Child no. 6, Child pid: 12 exited with Status: 12, Waiting Time: 861, Run Time: 279
+Child 9 finished
+Child no. 7, Child pid: 9 exited with Status: 9, Waiting Time: 1035, Run Time: 173
+Child 11 finished
+Child no. 8, Child pid: 11 exited with Status: 11, Waiting Time: 1034, Run Time: 264
